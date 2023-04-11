@@ -5,6 +5,7 @@
         "Eevee",
         "Greninja",
         "Gyarados",
+        "Highscores",
         "Hoenn",
         "Incineroar",
         "Jigglypuff",
@@ -12,5 +13,6 @@
         "Rayquaza",
         "Regigigas",
         "Unova"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
