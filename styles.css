@@ -1,0 +1,30 @@
+#Start-Quiz{
+
+    text-align: center;
+    background-color: yellow;
+    color: brown;
+
+}
+
+#End-Game{
+
+    display: none;
+
+}
+
+#highscores{
+
+    display: inline-block;
+    position: absolute;
+    top: 3%;
+    left: 1%;
+
+}
+
+.hide{
+
+    display: none;
+
+}
+
+
