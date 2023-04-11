@@ -131,4 +131,5 @@ submitButton.addEventListener("click", function (event) {
         localStorage.setItem("name", name);
         renderLastRegistered();
     }
+    event.preventDefault();
 });

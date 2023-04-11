@@ -6,10 +6,8 @@
 
 }
 
-#End-Game{
-
-    display: none;
-
+#question{
+    text-align: center;
 }
 
 #highscores{
@@ -25,6 +23,10 @@
 
     display: none;
 
+}
+
+button{
+    text-align: center;
 }
 
 
