@@ -74,6 +74,12 @@ quizDiv.addEventListener("click", function (event) {
         console.log("Clicked!")
         console.log("Value:" + event.target.innerText);
         console.log("Correct Answer:" + questions[currentQuestion].correctAnswer)
+        
+        if (event.target.innerText !== questions[currentQuestion].correctAnswer) {
+            
+            timer -=10
+
+        }
 
         console.log(currentQuestion)
         console.log(questions.length)
