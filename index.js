@@ -15,7 +15,7 @@ let gameEnd = document.querySelector("#End-Game")
 // starts the quiz
 startQuiz.addEventListener("click", function () {
 
-    start - Quiz.classList.add("hide");
+    startQuiz.classList.add("hide");
     quizDiv.classList.remove("hide");
     startTimer();
 
@@ -29,7 +29,7 @@ function startTimer() {
     timerId = setInterval(function () {
 
         timer -= 1
-        // console.log(timer);
+        console.log(timer);
         if (timer === 0) {
 
             endGame();
@@ -78,6 +78,7 @@ quizDiv.addEventListener("click", function (event) {
         if (event.target.innerText !== questions[currentQuestion].correctAnswer) {
             
             timer -=10
+            // clearInterval(timerId)
 
         }
 
@@ -104,32 +105,29 @@ function endGame() {
     startQuiz.classList.add("hide")
     quizDiv.classList.add("hide")
 
-
 }
 
-// for (let i = 0; i < names.length; i++) {
-//     let todo = names[i];
-
-//     let li = document.createElement("li");
-//     li.textContent = names;
-//     li.setAttribute("data-index", i);
-
-//     li.appendChild(button);
-//     todoList.appendChild(li);
-//   }
-
 submitButton.addEventListener("click", function (event) {
-    event.preventDefault();
-
     let name = document.querySelector("#text").value;
+    console.log(name)
 
     if (name === "") {
         displayMessage("error", "Name cannot be blank");
     } else {
         displayMessage("success", "Registered successfully");
-
         localStorage.setItem("name", name);
         renderLastRegistered();
     }
+    names.value="";
     event.preventDefault();
 });
+
+function display(){
+    let display_data = document.getElementById('display_data')
+    for (let i = 0; i < localStorage.length; i++) {
+        let a = localStorage.names(i);
+        let b = localStorage.getItem(a);
+        display_data.innerHTML += a+" - " +b+ "<br>";
+        
+    }
+}

@@ -2,21 +2,41 @@
 
     text-align: center;
     background-color: yellow;
-    color: brown;
-
+    color: black;
+    font-size: x-large;
 }
 
-#question{
+#Quiz{
     text-align: center;
+    background-color: red;
+    color: white;
+    font-size: x-large;
+}
+
+#End-Game{
+    text-align: center;
+    background-color: blue;
+    color: white;
+    font-size: x-large;
+}
+
+button{
+    font-size: large;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#fname{
+    font-size: medium;
 }
 
 #highscores{
 
     display: inline-block;
-    position: absolute;
+    position: relative;
     top: 3%;
     left: 1%;
-
+    font-size: large;
 }
 
 .hide{
@@ -25,8 +45,11 @@
 
 }
 
-button{
-    text-align: center;
+#timer1{
+    text-align: right;
 }
 
+body{
+    background-image: url(./assets/coolest-poke-ball-on-starry-galaxy-r7w8578dkhu46pim.jpg);
+}
 
