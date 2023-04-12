@@ -48,7 +48,9 @@ function startTimer() {
 let questions = [{ question: "Which Pokemon region came out first?", answers: ["Hoenn", "Unova", "Alola", "Johto"], correctAnswer: "Johto" },
 { question: "Which Pokemon is the god of all Pokemon?", answers: ["Mewtwo", "Arceus", "Regigigas", "Rayquaza"], correctAnswer: "Arceus" },
 { question: "Which Pokemon is not a playable character in Smash Bros?", answers: ["Gyarados", "Jigglypuff", "Greninja", "Incineroar"], correctAnswer: "Gyarados" },
-{ question: "What Pokemon type can Eevee not evolve into?", answers: ["Dark", "Ice", "Ghost", "Fairy"], correctAnswer: "Ghost" }
+{ question: "What Pokemon type can Eevee not evolve into?", answers: ["Dark", "Ice", "Ghost", "Fairy"], correctAnswer: "Ghost" },
+{ question: "What Pokemon games was suppose to be the end?", answers: ["Black and White", "Diamond and Pearl", "Gold and Silver", "Red and Blue"], correctAnswer: "Gold and Silver" },
+{ question: "There is only a couple of games that the main character has a father. Which are they?", answers: ["Ruby and Sapphire", "Gold and Silver", "Scarlet and Violet", "LeafGreen and FireRed"], correctAnswer: "Ruby and Sapphire" },
 
 ]
 
@@ -127,7 +129,7 @@ submitButton.addEventListener("click", function (event) {
 function renderScores() {
     for (let i = 0; i < highScores.length; i++) {
         let highScore = document.createElement("ul")
-        highScore.textContent = highScores[i] + "-" + highScores[i].timer;
+        highScore.textContent =highScores[i].timer;
         ul.appendChild(highScore)
     }
 }
