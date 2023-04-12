@@ -3,7 +3,7 @@ let questionButton1 = document.querySelector("#answer1");
 let questionButton2 = document.querySelector("#answer2");
 let questionButton3 = document.querySelector("#answer3");
 let questionButton4 = document.querySelector("#answer4");
-let highScores = JSON.parse(localStorage.getItem("#High Scores")) || [];
+let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 let timerS = document.querySelector("#timer1");
 let timer = 60
 let submitButton = document.querySelector("#submit")
@@ -12,7 +12,7 @@ let startQuiz = document.querySelector("#Start-Quiz")
 let timerId
 let gameEnd = document.querySelector("#End-Game")
 highScores.textContent = "highScores"
-let ul = document.querySelector("#scoreboard")
+let scoreBoard = document.querySelector("#scoreboard")
 let finEnd = document.querySelector("#finalS")
 
 // starts the quiz
@@ -116,20 +116,22 @@ function endGame() {
 // submitting scores
 submitButton.addEventListener("click", function (event) {
 
-    event.preventDefault
+    event.preventDefault()
     let finalScore = {
         name: fullName.value,
         timer: timer,
     }
+    console.log(finalScore)
     highScores.push(finalScore)
     localStorage.setItem("highScores", JSON.stringify(highScores));
     renderScores();
+
 })
 
 function renderScores() {
     for (let i = 0; i < highScores.length; i++) {
-        let highScore = document.createElement("ul")
-        highScore.textContent =highScores[i].timer;
-        ul.appendChild(highScore)
+        let highScore = document.createElement("li")
+        highScore.textContent =highScores[i].timer + "-" + highScores[i].name;
+        scoreBoard.appendChild(highScore)
     }
 }
