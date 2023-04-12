@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,44 +10,50 @@
     <link rel="stylesheet" href="./styles.css">
 
 </head>
-<body>
-    
-    <div>
 
+<body>
+
+    <!-- view highscores -->
+    <div>
         <button id="highscores">Highscores</button>
 
     </div>
-        <div id="Start-Quiz" class=>
+    <!-- starting prompt -->
+    <div id="Start-Quiz" class=>
 
         <h1>Ready to start quiz?</h1>
         <button id="start">Start</button>
 
     </div>
 
-
-    <div id="Quiz"  class="hide">
+<!-- questions -->
+    <div id="Quiz" class="hide">
 
         <h1 id="question"></h1>
-        
+
         <button id="answer1"></button>
         <button id="answer2"></button>
         <button id="answer3"></button>
         <button id="answer4"></button>
-        
+        <h2 id="correctAnswer"></h2>
+<!-- timer for score -->
         <p id="timer1"></p>
 
 
     </div>
+    <!-- end game prompt -->
     <div id="End-Game" class="hide">
 
         <h2>Game Over!</h2>
+        <h3 id="finalS">Final Score...</h3>
         <h3>Enter your name:</h3>
         <input type="text" id="fname" name="fname">
-        <button id ="submit">Submit</button>
+        <button id="submit">Submit</button>
         <ul id="scoreboard"></ul>
 
     </div>
 
     <script src="./index.js"></script>
 </body>
+
 </html>

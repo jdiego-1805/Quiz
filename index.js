@@ -7,10 +7,13 @@ let highScores = JSON.parse(localStorage.getItem("#High Scores")) || [];
 let timerS = document.querySelector("#timer1");
 let timer = 60
 let submitButton = document.querySelector("#submit")
-let names = document.querySelector("#text")
+let fullName = document.querySelector("#fname")
 let startQuiz = document.querySelector("#Start-Quiz")
 let timerId
 let gameEnd = document.querySelector("#End-Game")
+highScores.textContent = "highScores"
+let ul = document.querySelector("#scoreboard")
+let finEnd = document.querySelector("#finalS")
 
 // starts the quiz
 startQuiz.addEventListener("click", function () {
@@ -74,11 +77,12 @@ quizDiv.addEventListener("click", function (event) {
         console.log("Clicked!")
         console.log("Value:" + event.target.innerText);
         console.log("Correct Answer:" + questions[currentQuestion].correctAnswer)
-        
+        correctAnswer.textContent = "Correct"
+
         if (event.target.innerText !== questions[currentQuestion].correctAnswer) {
-            
-            timer -=10
-            // clearInterval(timerId)
+
+            timer -= 10
+            correctAnswer.textContent = "Incorrect"
 
         }
 
@@ -86,13 +90,13 @@ quizDiv.addEventListener("click", function (event) {
         console.log(questions.length)
         currentQuestion++
         if (currentQuestion === questions.length) {
-            
+
             endGame();
-            
+
             return
         }
         renderQuestion();
-
+        finEnd.textContent = "Final Score... " + timer
     }
 })
 
@@ -107,27 +111,23 @@ function endGame() {
 
 }
 
+// submitting scores
 submitButton.addEventListener("click", function (event) {
-    let name = document.querySelector("#text").value;
-    console.log(name)
 
-    if (name === "") {
-        displayMessage("error", "Name cannot be blank");
-    } else {
-        displayMessage("success", "Registered successfully");
-        localStorage.setItem("name", name);
-        renderLastRegistered();
+    event.preventDefault
+    let finalScore = {
+        name: fullName.value,
+        timer: timer,
     }
-    names.value="";
-    event.preventDefault();
-});
+    highScores.push(finalScore)
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+    renderScores();
+})
 
-function display(){
-    let display_data = document.getElementById('display_data')
-    for (let i = 0; i < localStorage.length; i++) {
-        let a = localStorage.names(i);
-        let b = localStorage.getItem(a);
-        display_data.innerHTML += a+" - " +b+ "<br>";
-        
+function renderScores() {
+    for (let i = 0; i < highScores.length; i++) {
+        let highScore = document.createElement("ul")
+        highScore.textContent = highScores[i] + "-" + highScores[i].timer;
+        ul.appendChild(highScore)
     }
 }
